@@ -32,6 +32,6 @@ session_destroy();
 // Dari: C:\xampp\htdocs\bkk\SistemBKK_smkn7\logout.php
 // Ke:   C:\xampp\htdocs\bkk\index.php
 // Path: ../index.php (naik 1 level)
-header("Location: ../SistemBKK_smkn7/index.php");
+header("Location: ../index.php");
 exit;
 ?>
