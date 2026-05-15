@@ -10,7 +10,7 @@ if (session_status() === PHP_SESSION_NONE) {
 header("Cache-Control: no-cache, no-store, must-revalidate");
 header("Pragma: no-cache");
 header("Expires: 0");
-// 2. ⚠️ PENTING: Include koneksi.php DI AWAL sebelum menggunakan $con
+
 include_once("koneksi.php");
 
 // 3. Validasi session login
@@ -39,7 +39,7 @@ if (!isset($_SESSION['ses_username']) || empty($_SESSION['ses_username'])) {
   // default
   else {
 
-    header("Location: peserta.php");
+    header("Location: ../beranda.php");
   }
 
   exit;
