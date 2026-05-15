@@ -1857,7 +1857,7 @@ if ($data_status === "admin") {
               /* CONTENT WRAPPER */
               .content-wrapper {
                 margin-left: 0 !important;
-                margin-top: 65px !important;
+                margin-top: 85px !important;
                 min-height: calc(100vh - 100px) !important;
                 padding: 15px !important;
               }
