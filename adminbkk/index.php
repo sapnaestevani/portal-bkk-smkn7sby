@@ -16,33 +16,35 @@ include_once("koneksi.php");
 // 3. Validasi session login
 if (!isset($_SESSION['ses_username']) || empty($_SESSION['ses_username'])) {
 
-  $referer = $_SERVER['HTTP_REFERER'] ?? '';
+    $level = $_SESSION['ses_level'] ?? '';
 
-  // jika sebelumnya dari login perusahaan
-  if (strpos($referer, 'login_perusahaan.php') !== false) {
+    // ADMIN
+    if ($level == 'admin') {
 
-    header("Location: ../login_perusahaan.php");
+        header("Location: ../login_admin.php");
+        exit;
+    }
 
-  }
-  // jika sebelumnya dari login admin
-  elseif (strpos($referer, 'login_admin.php') !== false) {
+    // PERUSAHAAN
+    elseif ($level == 'perusahaan') {
 
-    header("Location: ../login_admin.php");
+        header("Location: ../login_perusahaan.php");
+        exit;
+    }
 
-  }
-  // jika sebelumnya dari login peserta
-  elseif (strpos($referer, 'peserta.php') !== false) {
+    // SISWA / PESERTA
+    elseif ($level == 'siswa') {
 
-    header("Location: peserta.php");
+        header("Location: peserta.php");
+        exit;
+    }
 
-  }
-  // default
-  else {
+    // DEFAULT
+    else {
 
-    header("Location: index.php");
-  }
-
-  exit;
+        header("Location: ../index.php");
+        exit;
+    }
 }
 
 // 4. Ambil data session dengan sanitasi
