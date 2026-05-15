@@ -39,7 +39,7 @@ if (!isset($_SESSION['ses_username']) || empty($_SESSION['ses_username'])) {
   // default
   else {
 
-    header("Location: ../beranda.php");
+    header("Location: index.php");
   }
 
   exit;
