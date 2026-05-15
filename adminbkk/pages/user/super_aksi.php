@@ -91,7 +91,7 @@ elseif (isset($_POST['btnUBAH'])) {
         }
         // Untuk Admin, tidak perlu update tabel lain karena datanya sudah ada di tb_user
 
-        echo "<script>alert('✅ Data User Berhasil Diubah!'); window.location.href='http://localhost/bkk/SistemBKK/adminbkk/index.php?halaman=super_tampil';</script>";
+        echo "<script>alert('✅ Data User Berhasil Diubah!'); window.location.href='/adminbkk/index.php?halaman=super_tampil';</script>";
     } else {
         echo "<script>alert('❌ Gagal Mengubah Data: " . mysqli_error($con) . "'); window.history.back();</script>";
     }

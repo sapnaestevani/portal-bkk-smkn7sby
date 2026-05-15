@@ -114,7 +114,7 @@ elseif (isset($_GET['kode'])) {
         $query_hapus = mysqli_query($con, $sql_hapus);
 
         if ($query_hapus) {
-    $base_url = "http://" . $_SERVER['HTTP_HOST'] . "/bkk/SistemBKK_smkn7/adminbkk/index.php?halaman=loker_tampil";
+    $base_url = "http://" . $_SERVER['HTTP_HOST'] . "/adminbkk/index.php?halaman=loker_tampil";
 
     echo "<script>
         alert('✅ Lowongan dan Data Lamaran Terkait Berhasil Dihapus!');

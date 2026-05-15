@@ -616,11 +616,11 @@ $status_safe = htmlspecialchars($status_filter ?? "", ENT_QUOTES, "UTF-8");
         function kembali() {
             const tipeParam = '<?= htmlspecialchars($tipe ?? "", ENT_QUOTES, "UTF-8"); ?>';
             if (tipeParam.includes('bekerja')) {
-                window.location.href = 'http://localhost/bkk/SistemBKK_smkn7/adminbkk/index.php?halaman=tracerb';
+                window.location.href = '/adminbkk/index.php?halaman=tracerb';
             } else if (tipeParam.includes('studi')) {
-                window.location.href = 'http://localhost/bkk/SistemBKK_smkn7/adminbkk/index.php?halaman=tracers';
+                window.location.href = '/adminbkk/index.php?halaman=tracers';
             } else {
-                window.location.href = 'http://localhost/bkk/SistemBKK_smkn7/adminbkk/index.php?halaman=tracerbk';
+                window.location.href = '/adminbkk/index.php?halaman=tracerbk';
             }
         }
 

@@ -15,7 +15,7 @@ $koneksi_paths = [
     __DIR__ . '/../../../koneksi.php',           // One level higher
     
     // Path absolut dari DOCUMENT_ROOT
-    $_SERVER['DOCUMENT_ROOT'] . '/bkk/SistemBKK_smkn7/adminbkk/koneksi.php',
+    $_SERVER['DOCUMENT_ROOT'] . '/adminbkk/koneksi.php',
 ];
 
 $con = null;

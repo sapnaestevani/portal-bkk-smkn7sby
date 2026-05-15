@@ -260,14 +260,14 @@ body{
 
                 <div class="modal-body">
 
-                    <a href="/bkk/SistemBKK_smkn7/adminbkk/pages/tracer/tracer_pdf.php?tipe=all" target="_blank"
+                    <a href="/adminbkk/pages/tracer/tracer_pdf.php?tipe=all" target="_blank"
                         class="btn btn-success btn-block">
                         <i class="fa fa-print"></i> Cetak Semua Data
                     </a>
 
                     <hr>
 
-                    <form action="/bkk/SistemBKK_smkn7/adminbkk/pages/tracer/tracer_pdf.php" method="GET"
+                    <form action="/adminbkk/pages/tracer/tracer_pdf.php" method="GET"
                         target="_blank">
                         <input type="hidden" name="tipe" value="year">
 

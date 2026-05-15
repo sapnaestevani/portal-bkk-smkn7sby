@@ -10,7 +10,7 @@ $koneksi_paths = [
     __DIR__ . '/../koneksi.php',
     __DIR__ . '/koneksi.php',
     __DIR__ . '/../../../koneksi.php',
-    $_SERVER['DOCUMENT_ROOT'] . '/bkk/SistemBKK_smkn7/adminbkk/koneksi.php',
+    $_SERVER['DOCUMENT_ROOT'] . '/adminbkk/koneksi.php',
 ];
 
 $con = null;
