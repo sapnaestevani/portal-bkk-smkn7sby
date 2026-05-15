@@ -32,7 +32,19 @@ $ajukan = mysqli_num_rows(mysqli_query($con, "
 $query = mysqli_query($con, "
 SELECT 
     u.username,
-    p.*,
+
+    p.id_perusahaan,
+    p.id_user,
+    p.nama_perusahaan,
+    p.email,
+    p.alamat,
+    p.bidang_usaha,
+    p.jumlah_karyawan,
+    p.deskripsi,
+    p.manfaat,
+    p.logo,
+    p.status_verifikasi,
+
     d.nib,
     d.npwp,
     d.mou,
@@ -51,7 +63,27 @@ LEFT JOIN tb_dokumen_perusahaan d ON p.id_perusahaan = d.id_perusahaan
 LEFT JOIN tb_sosial_media sm ON sm.id_user = u.id_user
 
 WHERE u.role='perusahaan'
-GROUP BY p.id_perusahaan
+
+GROUP BY 
+    u.username,
+    p.id_perusahaan,
+    p.id_user,
+    p.nama_perusahaan,
+    p.email,
+    p.alamat,
+    p.bidang_usaha,
+    p.jumlah_karyawan,
+    p.deskripsi,
+    p.manfaat,
+    p.logo,
+    p.status_verifikasi,
+
+    d.nib,
+    d.npwp,
+    d.mou,
+    d.file_nib,
+    d.file_npwp,
+    d.file_mou
 ");
 ?>
 
