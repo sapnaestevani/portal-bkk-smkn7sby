@@ -1,5 +1,11 @@
 <?php
-$konek = mysqli_connect("localhost","root","","sistem_bkk");
+$konek = mysqli_connect(
+    $_ENV['MYSQLHOST'],
+    $_ENV['MYSQLUSER'],
+    $_ENV['MYSQLPASSWORD'],
+    $_ENV['MYSQLDATABASE'],
+    $_ENV['MYSQLPORT']
+);
 
 /* PROSES AJUKAN VERIFIKASI */
 if(isset($_POST['ajukan_verifikasi'])){

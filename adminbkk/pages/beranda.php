@@ -290,7 +290,7 @@ if ($data_status == "Ka. BKK" || $data_status == "admin") {
     </a>
   </div> 
     
-    <!-- Siswa Terdaftar 
+    <!-- Siswa Terdaftar -->
     <a href="?halaman=siswa_tampil" class="stat-card siswa">
       <div class="stat-icon">
         <i class="fa fa-graduation-cap"></i>
@@ -300,20 +300,20 @@ if ($data_status == "Ka. BKK" || $data_status == "admin") {
       <div class="stat-link">
         Selengkapnya <i class="fa fa-arrow-right"></i>
       </div>
-    </a> -->
+    </a> 
     
-    <!-- Data Pendaftar 
+    <!-- Data Pendaftar -->
     <a href="?halaman=pendaftar_tampil" class="stat-card pendaftar">
       <div class="stat-icon">
         <i class="fa fa-users"></i>
       </div>
       <div class="stat-number"><?= $pendaftar_count; ?></div>
-      <div class="stat-label">Data Pendaftar</div>
+      <div class="stat-label">Data Pendaftar Loker</div>
       <div class="stat-link">
         Selengkapnya <i class="fa fa-arrow-right"></i>
       </div>
     </a>
-  </div> -->
+  </div> 
   
   <!-- Logo Section -->
   <div class="logo-section">
@@ -887,7 +887,7 @@ if ($data_status == "Ka. BKK" || $data_status == "admin") {
           </div>
         </a>
 
-        <!-- Card 2: Pendaftar 
+        <!-- Card 2: Pendaftar -->
         <a href="?halaman=pendaftar_tampil" class="info-card info-card-orange">
           <div class="card-icon">👥</div>
           <div class="card-number">
@@ -920,7 +920,7 @@ if ($data_status == "Ka. BKK" || $data_status == "admin") {
               <i class="fa fa-arrow-circle-right card-arrow"></i>
             </span>
           </div>
-        </a> -->
+        </a> 
 
         <!-- Card 3: Profil Perusahaan -->
         <a href="?halaman=profile#perusahaan" class="info-card info-card-green">
@@ -1468,7 +1468,7 @@ if ($data_status == "Ka. BKK" || $data_status == "admin") {
   </a>
 
         <!-- Card 2: Pendaftaran -->
-      <!--  <a href="?halaman=pendaftar" class="info-card info-card-orange">
+       <a href="?halaman=pendaftar" class="info-card info-card-orange">
           <div class="card-icon">📋</div>
           <div class="card-number">
             <?php
@@ -1485,7 +1485,7 @@ if ($data_status == "Ka. BKK" || $data_status == "admin") {
               <i class="fa fa-arrow-circle-right card-arrow"></i>
             </span>
           </div>
-        </a> -->
+        </a>
 
         <!-- Card 3: Profil -->
         <a href="?halaman=profile_peserta&id_siswa=<?php echo $id_siswa; ?>" class="info-card info-card-green">

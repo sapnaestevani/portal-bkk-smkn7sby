@@ -1,6 +1,5 @@
 <?php
-// ✅ FIX: Jangan panggil session_start() jika index.php sudah memulainya
-// Path koneksi.php: sama dengan index.php (karena di-include oleh index.php)
+
 include_once("koneksi.php");
 
 // Cek akses
@@ -50,18 +49,22 @@ while ($d = mysqli_fetch_assoc($q_lamaran)) {
     $id_lamaran = $d['id_lamaran'];
 
     $sql = "INSERT INTO tb_jadwal (
+        id_jadwal,
         id_lamaran,
         id_lowongan,
         id_perusahaan,
+        judul_kegiatan,
         tanggal,
         waktu,
         lokasi,
         keterangan,
         status
     ) VALUES (
+        '$id_jadwal',
         '$id_lamaran',
         '$id_lowongan',
         '$id_perusahaan',
+        '$judul_kegiatan',
         '$tanggal',
         '$waktu',
         '$lokasi',
@@ -70,8 +73,10 @@ while ($d = mysqli_fetch_assoc($q_lamaran)) {
     )";
 
     if (mysqli_query($con, $sql)) {
-        $berhasil++;
-    }
+    $berhasil++;
+} else {
+    die("Error SQL: " . mysqli_error($con));
+}
 }
 
 echo "<script>alert('✅ Jadwal berhasil ke $berhasil pelamar');window.location='?halaman=jadwal_tampil';</script>";
