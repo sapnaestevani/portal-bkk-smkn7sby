@@ -597,7 +597,7 @@ border-color:#ef4444;
 
     /* ===== CARD ===== */
     .card{
-        margin-top: 20px;
+        margin-top: 8px;
         border-radius: 18px !important;
         overflow: hidden !important;
     }

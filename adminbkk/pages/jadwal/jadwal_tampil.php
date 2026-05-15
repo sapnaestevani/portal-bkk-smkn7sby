@@ -398,6 +398,215 @@ $id_perusahaan = isset($_SESSION['ses_id_perusahaan']) ? intval($_SESSION['ses_i
             width: 100%;
         }
     }
+
+    /* =====================================================
+   RESPONSIVE ALL DEVICE
+===================================================== */
+@media (max-width: 992px) {
+
+  .schedule-container {
+    padding: 9px !important;
+  }
+
+  .page-header-modern {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    text-align: center !important;
+    padding: 25px 20px !important;
+    border-radius: 18px !important;
+    gap: 18px !important;
+  }
+
+  .page-title h1 {
+    justify-content: center !important;
+    font-size: 24px !important;
+    line-height: 1.4;
+    flex-wrap: wrap;
+  }
+
+  .page-title p {
+    font-size: 13px !important;
+  }
+
+  .btn-modern-primary {
+    width: 100% !important;
+    justify-content: center !important;
+    min-height: 48px !important;
+    font-size: 14px !important;
+  }
+
+  .modern-table-card {
+    border-radius: 18px !important;
+    overflow: hidden !important;
+  }
+
+  .table-responsive-modern {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .modern-table {
+    min-width: 1000px !important;
+  }
+
+  .modern-table thead th {
+    padding: 14px 12px !important;
+    font-size: 12px !important;
+    white-space: nowrap !important;
+  }
+
+  .modern-table tbody td {
+    padding: 14px 12px !important;
+    font-size: 12px !important;
+    white-space: nowrap !important;
+  }
+
+  .schedule-id,
+  .schedule-date,
+  .schedule-time {
+    font-size: 11px !important;
+    padding: 5px 10px !important;
+  }
+
+  .company-name,
+  .job-title,
+  .location-text {
+    font-size: 12px !important;
+    line-height: 1.5;
+  }
+
+  .action-buttons-modern {
+    flex-direction: row !important;
+    justify-content: center !important;
+    gap: 6px !important;
+  }
+
+  .btn-action-modern {
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 13px !important;
+  }
+
+  /* MODAL */
+  .modal-dialog {
+    width: 95% !important;
+    margin: 15px auto !important;
+  }
+
+  .modal-modern .modal-content {
+    border-radius: 18px !important;
+  }
+
+  .modal-modern .modal-header {
+    padding: 20px !important;
+  }
+
+  .modal-modern .modal-title {
+    font-size: 18px !important;
+    line-height: 1.5;
+  }
+
+  .modal-modern .modal-body {
+    padding: 20px !important;
+    max-height: 75vh !important;
+    overflow-y: auto !important;
+  }
+
+  .modal-modern .modal-footer {
+    flex-direction: column !important;
+    gap: 10px !important;
+    padding: 20px !important;
+  }
+
+  .btn-modal-save,
+  .btn-modal-cancel {
+    width: 100% !important;
+    min-height: 46px !important;
+    justify-content: center !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .modal-modern .form-control {
+    min-height: 46px !important;
+    font-size: 14px !important;
+  }
+
+  textarea.form-control {
+    min-height: 90px !important;
+  }
+
+  /* DATATABLE */
+  .dataTables_wrapper {
+    padding: 12px !important;
+  }
+
+  .dataTables_length,
+  .dataTables_filter,
+  .dataTables_info,
+  .dataTables_paginate {
+    text-align: center !important;
+    float: none !important;
+    margin-bottom: 10px !important;
+  }
+
+  .dataTables_filter input {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-top: 8px !important;
+  }
+
+  .dataTables_paginate .paginate_button {
+    padding: 6px 12px !important;
+    font-size: 12px !important;
+  }
+
+  /* EMPTY STATE */
+  .empty-state-modern {
+    padding: 40px 15px !important;
+  }
+
+  .empty-state-modern i {
+    font-size: 48px !important;
+  }
+
+  .empty-state-modern h4 {
+    font-size: 16px !important;
+    line-height: 1.5;
+  }
+}
+
+/* EXTRA SMALL DEVICE */
+@media (max-width: 576px) {
+
+  .page-title h1 {
+    font-size: 20px !important;
+  }
+
+  .modern-table {
+    min-width: 900px !important;
+  }
+
+  .schedule-container {
+    padding: 10px !important;
+  }
+
+  .page-header-modern {
+    padding: 20px 15px !important;
+  }
+
+  .modal-modern .modal-body {
+    padding: 15px !important;
+  }
+
+  .modal-modern .modal-header {
+    padding: 18px 15px !important;
+  }
+
+  .modal-modern .modal-footer {
+    padding: 15px !important;
+  }
+}
 </style>
 <div class="schedule-container">
     <div class="page-header-modern">
@@ -425,6 +634,7 @@ $id_perusahaan = isset($_SESSION['ses_id_perusahaan']) ? intval($_SESSION['ses_i
                         <th>Tanggal</th>
                         <th>Waktu</th>
                         <th>Lokasi</th>
+                        <th>Kegiatan</th>
                         <th>Keterangan</th>
                         <?php if ($data_status != "siswa"): ?>
                             <th width="12%">Aksi</th>
@@ -445,6 +655,7 @@ $id_perusahaan = isset($_SESSION['ses_id_perusahaan']) ? intval($_SESSION['ses_i
                                 j.tanggal,
                                 j.waktu,
                                 j.lokasi,
+                                j.judul_kegiatan,
                                 j.keterangan,
                                 j.status,
                                 p.nama_perusahaan,
@@ -464,6 +675,7 @@ $id_perusahaan = isset($_SESSION['ses_id_perusahaan']) ? intval($_SESSION['ses_i
                                 j.tanggal,
                                 j.waktu,
                                 j.lokasi,
+                                j.judul_kegiatan,
                                 j.keterangan,
                                 j.status,
                                 p.nama_perusahaan,
@@ -484,6 +696,7 @@ $id_perusahaan = isset($_SESSION['ses_id_perusahaan']) ? intval($_SESSION['ses_i
                                 j.tanggal,
                                 j.waktu,
                                 j.lokasi,
+                                j.judul_kegiatan,
                                 j.keterangan,
                                 j.status,
                                 p.nama_perusahaan,
@@ -505,9 +718,9 @@ $id_perusahaan = isset($_SESSION['ses_id_perusahaan']) ? intval($_SESSION['ses_i
                     $query = mysqli_query($con, $sql);
                     
                     if (!$query) {
-                        echo "<tr><td colspan='9' class='text-danger text-center'>Error: " . htmlspecialchars(mysqli_error($con)) . "</td></tr>";
+                        echo "<tr><td colspan='10' class='text-danger text-center'>Error: " . htmlspecialchars(mysqli_error($con)) . "</td></tr>";
                     } elseif (mysqli_num_rows($query) == 0) {
-                        echo "<tr><td colspan='9'>";
+                        echo "<tr><td colspan='10'>";
                         echo "<div class='empty-state-modern'>";
                         echo "<i class='fa fa-calendar-times'></i>";
                         if ($data_status == "siswa") {
@@ -527,6 +740,7 @@ $id_perusahaan = isset($_SESSION['ses_id_perusahaan']) ? intval($_SESSION['ses_i
                         <td><span class="schedule-date"><i class="fa fa-calendar"></i> <?= date('d-m-Y', strtotime($data['tanggal'])); ?></span></td>
                         <td><span class="schedule-time"><i class="fa fa-clock"></i> <?= date('H:i', strtotime($data['waktu'])); ?> WIB</span></td>
                         <td><span class="location-text"><i class="fa fa-map-marker-alt"></i> <?= htmlspecialchars($data['lokasi']); ?></span></td>
+                        <td><span class="location-text"><i class="fa fa-calendar-check"></i> <?= htmlspecialchars($data['judul_kegiatan']); ?></span></td>
                         <td><?= htmlspecialchars($data['keterangan']); ?></td>
                         
                         <?php if ($data_status != "siswa"): ?>
@@ -610,10 +824,15 @@ $id_perusahaan = isset($_SESSION['ses_id_perusahaan']) ? intval($_SESSION['ses_i
                         <input type="text" class="form-control" name="lokasi" 
                                placeholder="Contoh: Ruang Meeting Lt.2" required>
                     </div>
+
+                    <div class="form-group">
+                        <label><i class="fa fa-calendar-check"></i> Kegiatan</label>
+                        <textarea class="form-control" name="judul_kegiatan" rows="2" placeholder="Contoh: Interview"></textarea>
+                    </div>
                     
                     <div class="form-group">
                         <label><i class="fa fa-info-circle"></i> Keterangan</label>
-                        <textarea class="form-control" name="keterangan" rows="2">JadwalPanggilan</textarea>
+                        <textarea class="form-control" name="keterangan" rows="2" placeholder="Masukkan keterangan"></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">

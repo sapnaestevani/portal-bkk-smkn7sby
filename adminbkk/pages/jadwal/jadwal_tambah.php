@@ -14,11 +14,18 @@ if (isset($_POST['btnSimpan'])) {
     $tanggal = mysqli_real_escape_string($con, $_POST['tanggal'] ?? '');
     $waktu = mysqli_real_escape_string($con, $_POST['waktu'] ?? '');
     $lokasi = mysqli_real_escape_string($con, $_POST['lokasi'] ?? '');
+    $judul_kegiatan = mysqli_real_escape_string($con, $_POST['judul_kegiatan'] ?? '');
     $keterangan = mysqli_real_escape_string($con, $_POST['keterangan'] ?? 'Jadwal Tes Seleksi');
     $status = 'dijadwalkan';
     
     // Validasi
-    if (empty($id_lowongan) || empty($tanggal) || empty($waktu) || empty($lokasi)) {
+    if (
+    empty($id_lowongan) ||
+    empty($judul_kegiatan) ||
+    empty($tanggal) ||
+    empty($waktu) ||
+    empty($lokasi)
+) {
         echo "<script>alert('❌ Semua field wajib diisi!');window.history.back();</script>";
         exit;
     }
@@ -48,34 +55,33 @@ while ($d = mysqli_fetch_assoc($q_lamaran)) {
 
     $id_lamaran = $d['id_lamaran'];
 
-    $sql = "INSERT INTO tb_jadwal (
-        id_jadwal,
-        id_lamaran,
-        id_lowongan,
-        id_perusahaan,
-        judul_kegiatan,
-        tanggal,
-        waktu,
-        lokasi,
-        keterangan,
-        status
-    ) VALUES (
-        '$id_jadwal',
-        '$id_lamaran',
-        '$id_lowongan',
-        '$id_perusahaan',
-        '$judul_kegiatan',
-        '$tanggal',
-        '$waktu',
-        '$lokasi',
-        '$keterangan',
-        '$status'
-    )";
+
+$sql = "INSERT INTO tb_jadwal (
+    id_lamaran,
+    id_lowongan,
+    id_perusahaan,
+    judul_kegiatan,
+    tanggal,
+    waktu,
+    lokasi,
+    keterangan,
+    status
+) VALUES (
+    '$id_lamaran',
+    '$id_lowongan',
+    '$id_perusahaan',
+    '$judul_kegiatan',
+    '$tanggal',
+    '$waktu',
+    '$lokasi',
+    '$keterangan',
+    '$status'
+)";
 
     if (mysqli_query($con, $sql)) {
     $berhasil++;
 } else {
-    die("Error SQL: " . mysqli_error($con));
+    die("SQL ERROR: " . mysqli_error($con));
 }
 }
 
