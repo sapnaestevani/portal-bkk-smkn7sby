@@ -607,6 +607,86 @@ $id_perusahaan = isset($_SESSION['ses_id_perusahaan']) ? intval($_SESSION['ses_i
     padding: 15px !important;
   }
 }
+
+/* FIX MODAL MOBILE TERLALU PANJANG */
+@media (max-width: 768px) {
+
+  .modal {
+    padding: 0 !important;
+  }
+
+  .modal-dialog {
+    width: 95% !important;
+    margin: 10px auto !important;
+    height: auto !important;
+  }
+
+  .modal-modern .modal-content {
+    max-height: 90vh !important;
+    overflow: hidden !important;
+    border-radius: 18px !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* HEADER TETAP TERLIHAT */
+  .modal-modern .modal-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 10 !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    padding: 16px 18px !important;
+  }
+
+  .modal-modern .modal-title {
+    font-size: 17px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* BODY BISA SCROLL */
+  .modal-modern .modal-body {
+    overflow-y: auto !important;
+    max-height: calc(90vh - 130px) !important;
+    padding: 18px !important;
+  }
+
+  /* FOOTER TETAP */
+  .modal-modern .modal-footer {
+    position: sticky !important;
+    bottom: 0 !important;
+    background: #fff !important;
+    z-index: 10 !important;
+    padding: 15px !important;
+    border-top: 1px solid #e2e8f0 !important;
+  }
+
+  /* FORM */
+  .modal-modern .form-group {
+    margin-bottom: 16px !important;
+  }
+
+  .modal-modern label {
+    font-size: 13px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .modal-modern .form-control {
+    min-height: 44px !important;
+    font-size: 14px !important;
+    border-radius: 12px !important;
+  }
+
+  textarea.form-control {
+    min-height: 80px !important;
+  }
+
+  /* BUTTON */
+  .btn-modal-save,
+  .btn-modal-cancel {
+    min-height: 44px !important;
+    font-size: 14px !important;
+  }
+}
 </style>
 <div class="schedule-container">
     <div class="page-header-modern">
