@@ -20,218 +20,236 @@ if ($data_status == "Ka. BKK" || $data_status == "admin") {
 ?>
 
 <style>
-  /* Modern Dashboard Styling */
-  .modern-dashboard {
-    padding: 20px -40px;
-    background: linear-gradient(135deg, #f5f6f7 0%, #e5e7eb 100%);
-    min-height: 100vh;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,body{
+  width:100%;
+  overflow-x:hidden;
+  font-family:'Segoe UI',sans-serif;
+  background:#f5f7fb;
+}
+
+/* DASHBOARD */
+.modern-dashboard{
+  width:100%;
+  padding:20px;
+}
+
+/* HEADER */
+.dashboard-header{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.dashboard-header h1{
+  font-size:clamp(24px,5vw,42px);
+  font-weight:800;
+  color:#1e293b;
+  margin-bottom:10px;
+}
+
+.dashboard-header p{
+  font-size:clamp(13px,2vw,18px);
+  color:#64748b;
+  line-height:1.5;
+}
+
+/* GRID */
+.stats-grid{
+  width:100%;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  margin-bottom:30px;
+}
+
+/* CARD */
+.stat-card{
+  background:#fff;
+  border-radius:18px;
+  padding:22px;
+  text-decoration:none;
+  color:#111;
+  box-shadow:0 4px 15px rgba(0,0,0,0.08);
+  transition:0.3s ease;
+  position:relative;
+  overflow:hidden;
+  min-height:180px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.stat-card:hover{
+  transform:translateY(-5px);
+}
+
+/* TOP BORDER */
+.stat-card::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:5px;
+}
+
+/* WARNA */
+.lowongan::before{
+  background:#06b6d4;
+}
+
+.perusahaan::before{
+  background:#10b981;
+}
+
+.siswa::before{
+  background:#f59e0b;
+}
+
+.pendaftar::before{
+  background:#ef4444;
+}
+
+/* ICON */
+.stat-icon{
+  width:60px;
+  height:60px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
+  color:#fff;
+  margin-bottom:15px;
+}
+
+.lowongan .stat-icon{
+  background:#06b6d4;
+}
+
+.perusahaan .stat-icon{
+  background:#10b981;
+}
+
+.siswa .stat-icon{
+  background:#f59e0b;
+}
+
+.pendaftar .stat-icon{
+  background:#ef4444;
+}
+
+/* NUMBER */
+.stat-number{
+  font-size:clamp(28px,5vw,45px);
+  font-weight:800;
+  margin-bottom:10px;
+  word-break:break-word;
+}
+
+/* LABEL */
+.stat-label{
+  font-size:15px;
+  font-weight:600;
+  color:#475569;
+  line-height:1.4;
+  margin-bottom:15px;
+}
+
+/* LINK */
+.stat-link{
+  font-size:14px;
+  font-weight:600;
+  color:#2563eb;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+/* LOGO */
+.logo-section{
+  text-align:center;
+  margin-top:20px;
+  padding:10px;
+}
+
+.logo-section img{
+  width:100%;
+  max-width:220px;
+  height:auto;
+  object-fit:contain;
+}
+
+.logo-text{
+  margin-top:15px;
+  font-size:clamp(16px,3vw,22px);
+  font-weight:700;
+  color:#1e293b;
+  line-height:1.5;
+}
+
+.logo-text span{
+  display:block;
+  font-size:clamp(13px,2vw,16px);
+  color:#64748b;
+  font-weight:500;
+}
+
+/* TABLET */
+@media(max-width:768px){
+
+  .modern-dashboard{
+    padding:15px;
   }
-  
-  .dashboard-header {
-    text-align: center;
-    margin-bottom: 50px;
-    animation: fadeInDown 0.8s ease;
+
+  .stats-grid{
+    grid-template-columns:1fr;
+    gap:18px;
   }
-  
-  .dashboard-header h1 {
-    font-size: 42px;
-    font-weight: 800;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 10px;
+
+  .stat-card{
+    min-height:auto;
+    padding:20px;
   }
-  
-  .dashboard-header p {
-    font-size: 18px;
-    color: #718096;
-    font-weight: 500;
+
+  .stat-icon{
+    width:55px;
+    height:55px;
+    font-size:22px;
   }
-  
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    max-width: 1400px;
-    margin: 0 auto 50px auto;
-    padding: 0 20px;
+
+}
+
+/* HP KECIL */
+@media(max-width:480px){
+
+  .modern-dashboard{
+    padding:12px;
   }
-  
-  .stat-card {
-    background: white;
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-    animation: fadeInUp 0.8s ease backwards;
+
+  .dashboard-header{
+    margin-bottom:25px;
   }
-  
-  .stat-card:nth-child(1) { animation-delay: 0.1s; }
-  .stat-card:nth-child(2) { animation-delay: 0.2s; }
-  .stat-card:nth-child(3) { animation-delay: 0.3s; }
-  .stat-card:nth-child(4) { animation-delay: 0.4s; }
-  
-  .stat-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(90deg, var(--card-color), var(--card-color-secondary));
-    transition: height 0.4s ease;
+
+  .stat-card{
+    border-radius:15px;
+    padding:18px;
   }
-  
-  .stat-card:hover::before {
-    height: 100%;
-    opacity: 0.1;
+
+  .stat-link{
+    font-size:13px;
   }
-  
-  .stat-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-  }
-  
-  .stat-card.lowongan { --card-color: #06b6d4; --card-color-secondary: #3b82f6; }
-  .stat-card.perusahaan { --card-color: #10b981; --card-color-secondary: #34d399; }
-  .stat-card.siswa { --card-color: #f59e0b; --card-color-secondary: #fbbf24; }
-  .stat-card.pendaftar { --card-color: #ef4444; --card-color-secondary: #f87171; }
-  
-  .stat-icon {
-    width: 70px;
-    height: 70px;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
-    margin-bottom: 20px;
-    background: linear-gradient(135deg, var(--card-color), var(--card-color-secondary));
-    color: white;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  }
-  
-  .stat-number {
-    font-size: 48px;
-    font-weight: 800;
-    background: linear-gradient(135deg, var(--card-color), var(--card-color-secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 8px;
-    line-height: 1;
-  }
-  
-  .stat-label {
-    font-size: 16px;
-    color: #64748b;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 15px;
-  }
-  
-  .stat-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--card-color);
-    font-weight: 700;
-    font-size: 14px;
-    text-decoration: none;
-    transition: gap 0.3s ease;
-  }
-  
-  .stat-card:hover .stat-link {
-    gap: 12px;
-  }
-  
-  .logo-section {
-    text-align: center;
-    padding: 40px 20px;
-    animation: fadeIn 1s ease;
-  }
-  
-  .logo-section img {
-    max-width: 250px;
-    height: auto;
-    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.15));
-    transition: transform 0.4s ease;
-    border-radius: 20px;
-  }
-  
-  .logo-section img:hover {
-    transform: scale(1.05) rotate(2deg);
-  }
-  
-  .logo-text {
-    margin-top: 25px;
-    font-family: 'Courier New', monospace;
-    font-size: 20px;
-    font-weight: 700;
-    color: #2d3748;
-    line-height: 1.6;
-  }
-  
-  .logo-text span {
-    display: block;
-    font-size: 16px;
-    color: #718096;
-    font-weight: 500;
-  }
-  
-  @keyframes fadeInDown {
-    from {
-      opacity: 0;
-      transform: translateY(-30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  
-  @media (max-width: 768px) {
-    .dashboard-header h1 {
-      font-size: 32px;
-    }
-    
-    .stats-grid {
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-    
-    .stat-number {
-      font-size: 40px;
-    }
-    
-    .logo-section img {
-      max-width: 200px;
-    }
-  }
+
+}
 </style>
+
 <div class="modern-dashboard">
   <!-- Header -->
   <div class="dashboard-header">
@@ -288,8 +306,7 @@ if ($data_status == "Ka. BKK" || $data_status == "admin") {
         Selengkapnya <i class="fa fa-arrow-right"></i>
       </div>
     </a>
-  </div> 
-    
+
     <!-- Siswa Terdaftar -->
     <a href="?halaman=siswa_tampil" class="stat-card siswa">
       <div class="stat-icon">
@@ -313,6 +330,7 @@ if ($data_status == "Ka. BKK" || $data_status == "admin") {
         Selengkapnya <i class="fa fa-arrow-right"></i>
       </div>
     </a>
+  </div> 
   </div> 
   
   <!-- Logo Section -->

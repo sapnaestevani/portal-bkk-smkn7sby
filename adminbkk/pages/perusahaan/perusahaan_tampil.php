@@ -1,21 +1,23 @@
 <style>
     /* Modern Card Layout */
-    .modern-grid-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-        gap: 25px;
-        padding: 20px 0;
-    }
+    .modern-grid-container{
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:20px;
+    padding:10px 0 20px;
+}
 
-    .modern-card {
-        background: white;
-        border-radius: 16px;
-        overflow: hidden;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        position: relative;
-        border: 1px solid #f0f0f0;
-    }
+    .modern-card{
+    width:100%;
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 4px 20px rgba(0,0,0,0.08);
+    transition:0.3s ease;
+    position:relative;
+    border:1px solid #f1f5f9;
+}
 
     .modern-card:hover {
         transform: translateY(-8px);
@@ -245,29 +247,183 @@
         margin-top: -20px;
     }
 
+    /* SEARCH */
+/* SEARCH */
+.search-wrapper-modern{
+    width:100%;
+    display:flex;
+    justify-content:flex-end;
+    margin-bottom:20px;
+}
+
+.search-box-modern{
+    width:100%;
+    max-width:420px;
+    position:relative;
+}
+
+.search-box-modern i{
+    position:absolute;
+    top:50%;
+    left:15px;
+    transform:translateY(-50%);
+    color:#667eea;
+    font-size:15px;
+}
+
+.search-box-modern input{
+    width:100%;
+    height:48px;
+    border:none;
+    outline:none;
+    border-radius:14px;
+    padding:0 15px 0 45px;
+    background:#fff;
+    font-size:14px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+    transition:0.3s ease;
+}
+
+.search-box-modern input:focus{
+    box-shadow:0 4px 20px rgba(102,126,234,0.25);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    /* SEARCH */
+.search-wrapper-modern{
+    width:100%;
+    display:flex;
+    justify-content:flex-end;
+    margin-bottom:20px;
+}
+
+.search-box-modern{
+    width:100%;
+    max-width:420px;
+    position:relative;
+}
+
+.search-box-modern i{
+    position:absolute;
+    top:50%;
+    left:15px;
+    transform:translateY(-50%);
+    color:#667eea;
+    font-size:15px;
+}
+
+.search-box-modern input{
+    width:100%;
+    height:48px;
+    border:none;
+    outline:none;
+    border-radius:14px;
+    padding:0 15px 0 45px;
+    background:#fff;
+    font-size:14px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+    transition:0.3s ease;
+}
+
+.search-box-modern input:focus{
+    box-shadow:0 4px 20px rgba(102,126,234,0.25);
+}
+}
+
     /* Responsive */
-    @media (max-width: 768px) {
-        .modern-grid-container {
-            grid-template-columns: 1fr;
-        }
+    @media(max-width:768px){
 
-        .card-header-modern {
-            flex-direction: column;
-            gap: 12px;
-            text-align: center;
-        }
-
-        .card-actions {
-            justify-content: center;
-        }
+    body{
+        overflow-x:hidden;
     }
 
-    /* Hide original table */
-    #example1 {
-        display: none !important;
+    .box-body{
+        margin-top:15px;
     }
+
+    .search-wrapper-modern{
+        justify-content:center;
+        margin-bottom:15px;
+    }
+
+    .search-box-modern{
+        max-width:100%;
+    }
+
+    .search-box-modern input{
+        height:45px;
+        font-size:13px;
+    }
+
+    .modern-grid-container{
+        grid-template-columns:1fr;
+        gap:15px;
+    }
+
+    .modern-card{
+        border-radius:15px;
+    }
+
+    .card-header-modern{
+        flex-direction:row;
+        align-items:center;
+        justify-content:space-between;
+        padding:15px;
+    }
+
+    .card-body-modern{
+        padding:18px;
+    }
+
+    .info-row{
+        gap:10px;
+        margin-bottom:15px;
+    }
+
+    .info-icon{
+        width:32px;
+        height:32px;
+        font-size:14px;
+    }
+
+    .info-label{
+        font-size:11px;
+    }
+
+    .info-value{
+        font-size:13px;
+        word-break:break-word;
+    }
+
+    .card-actions{
+        padding:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .btn-action-modern{
+        width:35px;
+        height:35px;
+        font-size:13px;
+    }
+
+    .btn-sm{
+        width:100%;
+        text-align:center;
+    }
+
+}
 </style>
 <div class="box-body">
+    <!-- SEARCH -->
+<div class="search-wrapper-modern">
+    <div class="search-box-modern">
+        <i class="fa fa-search"></i>
+        <input type="text" id="searchPerusahaan" placeholder="Cari nama perusahaan...">
+    </div>
+</div>
     <div class="modern-grid-container">
         <?php
         $query_tampil = mysqli_query($con, "
@@ -280,7 +436,8 @@
 
         while ($data = mysqli_fetch_array($query_tampil, MYSQLI_BOTH)) {
             ?>
-            <div class="modern-card">
+            <div class="modern-card perusahaan-card"
+     data-perusahaan="<?= strtolower(htmlspecialchars($data['nama'])); ?>">
                 <div class="card-header-modern">
                     <div class="card-number"><?= $no++; ?></div>
                     <span
@@ -394,3 +551,37 @@
         ?>
     </div>
 </div>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    const input = document.getElementById("searchPerusahaan");
+
+    const cards = document.querySelectorAll(".perusahaan-card");
+
+    input.addEventListener("input", function(){
+
+        let keyword = input.value.toLowerCase().trim();
+
+        cards.forEach(function(card){
+
+            let text = card.innerText.toLowerCase();
+
+            if(text.includes(keyword)){
+
+                card.style.display = "";
+
+            }else{
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+    });
+
+});
+
+</script>

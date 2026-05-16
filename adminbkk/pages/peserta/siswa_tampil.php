@@ -4,243 +4,342 @@ include_once("koneksi.php");
 ?>
 
 <style>
-    /* Modern Styling */
-    .modern-container {
-        background: white;
-        border-radius: 15px;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-        margin: 5px;
-        overflow: hidden;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    overflow-x:hidden;
+    background:#f4f6f9;
+    font-family:'Segoe UI',sans-serif;
+}
+
+/* CONTAINER */
+.modern-container{
+    width:100%;
+    max-width:100%;
+    background:white;
+    border-radius:20px;
+    box-shadow:0 5px 25px rgba(0,0,0,0.08);
+    margin-top:-5px;
+    overflow:hidden;
+}
+
+/* HEADER */
+.modern-header{
+    width:100%;
+    background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+    color:white;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.modern-header h3{
+    margin:0;
+    font-size:clamp(20px,4vw,28px);
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+/* BUTTON */
+.btn-modern-primary{
+    background:white;
+    color:#667eea;
+    border:none;
+    padding:10px 18px;
+    border-radius:10px;
+    font-weight:600;
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    transition:0.3s ease;
+}
+
+.btn-modern-primary:hover{
+    transform:translateY(-2px);
+    color:#764ba2;
+}
+
+/* TABLE WRAPPER */
+.table-responsive{
+    width:100%;
+    overflow-x:auto;
+    padding:15px;
+}
+
+/* TABLE */
+.modern-table{
+    width:100%;
+    min-width:900px;
+    border-collapse:collapse;
+}
+
+/* HEADER TABLE */
+.modern-table thead{
+    background:#eef2ff;
+}
+
+.modern-table thead th{
+    padding:15px;
+    text-align:center;
+    font-weight:700;
+    color:#1e293b;
+    font-size:14px;
+    white-space:nowrap;
+    border:none;
+}
+
+/* BODY TABLE */
+.modern-table tbody td{
+    padding:14px;
+    font-size:14px;
+    color:#475569;
+    border-bottom:1px solid #e5e7eb;
+    vertical-align:middle;
+    white-space:nowrap;
+}
+
+.modern-table tbody tr:hover{
+    background:#f8fafc;
+}
+
+/* ACTION BUTTON */
+.action-buttons-modern{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:6px;
+    flex-wrap:nowrap;
+}
+
+.btn-action-modern{
+    width:35px;
+    height:35px;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    text-decoration:none;
+    transition:0.3s ease;
+    flex-shrink:0;
+}
+
+.btn-action-modern:hover{
+    transform:translateY(-2px);
+    color:white;
+}
+
+/* COLORS */
+.btn-detail{
+    background:#8b5cf6;
+}
+
+.btn-edit-modern{
+    background:#06b6d4;
+}
+
+.btn-delete-modern{
+    background:#ef4444;
+}
+
+/* DATATABLE */
+.dataTables_wrapper{
+    width:100%;
+}
+
+.dataTables_length,
+.dataTables_filter{
+    margin-bottom:15px;
+}
+
+.dataTables_filter input{
+    border:1px solid #d1d5db;
+    border-radius:8px;
+    padding:8px 12px;
+    margin-left:8px;
+    width:220px;
+    max-width:100%;
+}
+
+.dataTables_paginate{
+    margin-top:15px !important;
+}
+
+.dataTables_paginate .paginate_button{
+    border-radius:8px !important;
+    border:none !important;
+    margin:0 3px;
+}
+
+/* MODAL */
+.modal-content{
+    border:none;
+    border-radius:18px;
+    overflow:hidden;
+}
+
+.modal-header{
+    background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+    color:white;
+    border:none;
+}
+
+.modal-title{
+    font-weight:700;
+}
+
+.modal-body{
+    padding:20px;
+}
+
+.form-control{
+    border-radius:10px;
+    height:45px;
+    border:1px solid #d1d5db;
+    box-shadow:none;
+}
+
+.form-control:focus{
+    border-color:#667eea;
+    box-shadow:0 0 0 0.15rem rgba(102,126,234,.2);
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media screen and (max-width:768px){
+
+    body{
+        overflow-x:hidden !important;
     }
-    
-    .modern-header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 25px 30px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 15px;
+
+    .modern-container{
+    width:100%;
+    max-width:100%;
+    background:white;
+    border-radius:20px;
+    box-shadow:0 5px 25px rgba(0,0,0,0.08);
+    margin-top:18px;
+    overflow:hidden;
+}
+
+    .modern-header{
+        padding:15px !important;
+        flex-direction:column !important;
+        align-items:stretch !important;
+        text-align:center;
     }
-    
-    .modern-header h3 {
-        margin: 0;
-        font-size: 24px;
-        font-weight: 700;
-        display: flex;
-        align-items: center;
-        gap: 10px;
+
+    .modern-header h3{
+        font-size:20px !important;
+        justify-content:center;
     }
-    
-    .btn-modern-primary {
-        background: white;
-        color: #667eea;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 8px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        cursor: pointer;
+
+    .btn-modern-primary{
+        width:100% !important;
+        justify-content:center !important;
+        font-size:14px !important;
+        padding:12px !important;
     }
-    
-    .btn-modern-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        color: #764ba2;
+
+    .table-responsive{
+        width:100% !important;
+        overflow-x:auto !important;
+        padding:8px !important;
     }
-    
-    .modern-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 0;
+
+    .modern-table{
+        min-width:750px !important;
     }
-    
-    .modern-table thead {
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+
+    .modern-table thead th{
+        font-size:12px !important;
+        padding:10px !important;
+        white-space:nowrap;
     }
-    
-    .modern-table thead th {
-        padding: 15px;
-        text-align: left;
-        font-weight: 700;
-        color: #2d3748;
-        font-size: 14px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        border: none;
+
+    .modern-table tbody td{
+        font-size:12px !important;
+        padding:10px !important;
+        white-space:nowrap;
     }
-    
-    .modern-table tbody tr {
-        border-bottom: 1px solid #e2e8f0;
-        transition: all 0.3s ease;
+
+    .action-buttons-modern{
+        flex-direction:row !important;
+        flex-wrap:nowrap !important;
+        gap:4px !important;
     }
-    
-    .modern-table tbody tr:hover {
-        background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
-        transform: scale(1.005);
+
+    .btn-action-modern{
+        width:30px !important;
+        height:30px !important;
+        font-size:12px !important;
     }
-    
-    .modern-table tbody td {
-        padding: 15px;
-        color: #4a5568;
-        font-size: 14px;
-        border: none;
-        vertical-align: middle;
+
+    .dataTables_wrapper{
+        padding:0 !important;
     }
-    
-    .action-buttons-modern {
-        display: flex;
-        gap: 5px;
-        flex-wrap: wrap;
+
+    .dataTables_filter{
+        width:100% !important;
+        margin-top:10px !important;
+        text-align:left !important;
     }
-    
-    .btn-action-modern {
-        width: 32px;
-        height: 32px;
-        border-radius: 8px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-        border: none;
-        cursor: pointer;
-        text-decoration: none;
-        color: white;
-        font-size: 14px;
+
+    .dataTables_filter input{
+        width:100% !important;
+        margin-left:0 !important;
+        margin-top:5px !important;
     }
-    
-    .btn-detail {
-        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+
+    .dataTables_length{
+        margin-bottom:10px !important;
     }
-    
-    .btn-edit-modern {
-        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+
+    .paginate_button{
+        padding:5px 10px !important;
+        font-size:12px !important;
     }
-    
-    .btn-delete-modern {
-        background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+
+    .modal-dialog{
+        width:95% !important;
+        margin:20px auto !important;
     }
-    
-    .btn-action-modern:hover {
-        transform: translateY(-2px) rotate(5deg);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        color: white;
+
+    .modal-body{
+        padding:15px !important;
     }
-    
-    .btn-text {
-        width: auto;
-        padding: 0 12px;
-        font-size: 12px;
+
+    .form-group{
+        margin-bottom:15px !important;
     }
-    
-    /* Modal Modern */
-    .modal-modern .modal-content {
-        border-radius: 15px;
-        border: none;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+
+    .col-lg-3,
+    .col-lg-9,
+    .col-lg-12{
+        width:100% !important;
+        max-width:100% !important;
+        flex:100% !important;
     }
-    
-    .modal-modern .modal-header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        border-radius: 15px 15px 0 0;
-        padding: 20px;
+
+    .form-control{
+        width:100% !important;
     }
-    
-    .modal-modern .modal-title {
-        font-weight: 700;
-        font-size: 20px;
-    }
-    
-    .modal-modern .close {
-        color: white;
-        opacity: 1;
-        text-shadow: none;
-    }
-    
-    .modal-modern .form-control {
-        border: 2px solid #e2e8f0;
-        border-radius: 8px;
-        padding: 10px 15px;
-        transition: all 0.3s ease;
-    }
-    
-    .modal-modern .form-control:focus {
-        border-color: #667eea;
-        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        outline: none;
-    }
-    
-    .modal-modern .btn {
-        border-radius: 8px;
-        padding: 10px 20px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-    }
-    
-    .dataTables_wrapper {
-        padding: 20px;
-    }
-    
-    .dataTables_filter input {
-        border: 2px solid #e2e8f0;
-        border-radius: 8px;
-        padding: 8px 15px;
-        margin-left: 10px;
-        transition: all 0.3s ease;
-    }
-    
-    .dataTables_filter input:focus {
-        outline: none;
-        border-color: #667eea;
-        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-    }
-    
-    .dataTables_paginate .paginate_button {
-        border-radius: 8px !important;
-        margin: 0 3px;
-        border: none !important;
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%) !important;
-        color: #2d3748 !important;
-        transition: all 0.3s ease;
-    }
-    
-    .dataTables_paginate .paginate_button.current,
-    .dataTables_paginate .paginate_button:hover {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-        color: white !important;
-        transform: translateY(-2px);
-    }
-    
-    @media (max-width: 768px) {
-        .modern-header {
-            flex-direction: column;
-            text-align: center;
-        }
-        
-        .modern-table {
-            font-size: 12px;
-        }
-        
-        .modern-table thead th,
-        .modern-table tbody td {
-            padding: 10px 8px;
-        }
-        
-        .action-buttons-modern {
-            flex-direction: column;
-        }
-        
-        .btn-action-modern {
-            width: 100%;
-            margin-bottom: 5px;
-        }
-    }
+
+}
+
 </style>
 
 <?php

@@ -21,7 +21,7 @@ if (!isset($_SESSION['ses_username']) || ($_SESSION['ses_level'] ?? '') != 'admi
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         overflow: hidden;
         margin: 20px 0;
-        margin-top: 1px;
+        margin-top: 15px;
     }
     
     .modern-header {

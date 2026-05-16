@@ -116,60 +116,210 @@ if ($data_status == "perusahaan") {
 if ($data_status == "admin" || $data_status == "Ka. BKK" || $data_status == "") {
   ?>
   <style>
-    .card {
-      border: none !important;
-      border-radius: 16px !important;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
-      background: #fff !important;
-      margin-top: -45px;
-    }
 
-    .card-header {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-      color: white !important;
-      border-radius: 16px 16px 0 0 !important;
-      padding: 20px !important;
-      border: none !important;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    .btn-primary {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-      border: none !important;
-      border-radius: 10px !important;
-      padding: 10px 20px !important;
-      font-weight: 600 !important;
-      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3) !important;
-      transition: all 0.3s !important;
-    }
+html,
+body{
+  width:100%;
+  overflow-x:hidden;
+  font-family:'Segoe UI',sans-serif;
+  background:#f4f6f9;
+}
 
-    .btn-primary:hover {
-      transform: translateY(-2px) !important;
-      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4) !important;
-    }
+/* WRAPPER */
+.form-group{
+  width:100%;
+  padding:8px;
+}
 
-    .table {
-      margin-bottom: 0 !important;
-    }
+/* CARD */
+.card{
+  width:100%;
+  max-width:1000%;
+  border:none !important;
+  border-radius:20px !important;
+  box-shadow:0 5px 20px rgba(0,0,0,0.08) !important;
+  background:#fff !important;
+  overflow:hidden;
+  margin:-50px auto 0 auto !important;
+}
 
-    .table thead th {
-      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%) !important;
-      color: #2d3748 !important;
-      font-weight: 700 !important;
-      border: none !important;
-      padding: 15px !important;
-    }
+/* HEADER */
+.card-header{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  justify-content:flex-start;
+  background:linear-gradient(135deg,#667eea 0%,#764ba2 100%) !important;
+  padding:20px !important;
+  border:none !important;
+}
 
-    .table tbody td {
-      padding: 15px !important;
-      vertical-align: middle !important;
-      border-color: #e2e8f0 !important;
-    }
+/* BUTTON */
+.btn{
+  border-radius:10px !important;
+  font-weight:600 !important;
+  transition:0.3s ease;
+}
 
-    .table tbody tr:hover {
-      background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%) !important;
-      transition: all 0.3s !important;
-    }
-  </style>
+.btn-primary{
+  background:linear-gradient(135deg,#667eea 0%,#764ba2 100%) !important;
+  border:none !important;
+  padding:10px 18px !important;
+}
+
+.btn-primary:hover{
+  transform:translateY(-2px);
+}
+
+.btn-sm{
+  margin:2px;
+}
+
+/* BOX */
+.box{
+  border:none !important;
+  box-shadow:none !important;
+  background:transparent !important;
+}
+
+/* BOX HEADER */
+.box-header{
+  padding:20px;
+  border-bottom:1px solid #eee;
+}
+
+.box-title{
+  font-size:22px;
+  font-weight:700;
+  color:#1e293b;
+}
+
+/* TABLE WRAPPER */
+.box-body{
+  width:100%;
+  overflow-x:auto;
+  padding:15px;
+}
+
+/* TABLE */
+.table{
+  width:100% !important;
+  min-width:900px;
+  border-collapse:collapse !important;
+  margin-bottom:0 !important;
+}
+
+/* TABLE HEADER */
+.table thead th{
+  background:#eef2ff !important;
+  color:#1e293b !important;
+  font-weight:700 !important;
+  border:none !important;
+  padding:14px !important;
+  text-align:center;
+  white-space:nowrap;
+}
+
+/* TABLE BODY */
+.table tbody td{
+  padding:14px !important;
+  vertical-align:middle !important;
+  border-color:#e5e7eb !important;
+  font-size:14px;
+}
+
+.table tbody tr:hover{
+  background:#f8fafc !important;
+}
+
+/* MODAL */
+.modal-content{
+  border:none !important;
+  border-radius:18px !important;
+  overflow:hidden;
+}
+
+.modal-header{
+  background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+  color:white;
+  border:none !important;
+}
+
+.modal-title{
+  font-weight:700;
+}
+
+/* FORM */
+.form-control{
+  border-radius:10px !important;
+  height:45px !important;
+  border:1px solid #d1d5db !important;
+  box-shadow:none !important;
+}
+
+.form-control:focus{
+  border-color:#667eea !important;
+  box-shadow:0 0 0 0.15rem rgba(102,126,234,.2) !important;
+}
+
+/* ACTION BUTTON */
+td .btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .form-group{
+    padding:8px;
+  }
+
+  /* CARD */
+.card{
+  width:100%;
+  max-width:100%;
+  border:none !important;
+  border-radius:20px !important;
+  box-shadow:0 5px 20px rgba(0,0,0,0.08) !important;
+  background:#fff !important;
+  overflow:hidden;
+  margin:-35px auto 0 auto !important;
+}
+
+  .card-header{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .card-header .btn{
+    width:100%;
+  }
+
+  .box-title{
+    font-size:18px;
+  }
+
+  .table{
+    min-width:800px;
+  }
+
+  .modal-dialog{
+    width:95%;
+    margin:20px auto;
+  }
+
+}
+
+</style>
 
   <div class="form-group">
     <br>
@@ -265,6 +415,7 @@ if ($data_status == "admin" || $data_status == "Ka. BKK" || $data_status == "") 
           </div>
         </div>
         <div class="box-body">
+          <div class="table-responsive">
           <table id="example1" class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -322,6 +473,7 @@ if ($data_status == "admin" || $data_status == "Ka. BKK" || $data_status == "") 
               ?>
             </tbody>
           </table>
+          </div>
         </div>
       </div>
     </div>
