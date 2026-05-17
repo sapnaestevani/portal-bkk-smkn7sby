@@ -48,12 +48,12 @@ if (isset($_POST['simpan'])) {
     INSERT INTO tb_siswa SET
         id_user='$id_user',
         nisn='$nisn',
-        nama='',
+        nama=NULL,
         jekel=NULL,
         status_perkawinan=NULL,
-        kewarganegaraan='',
-        tinggi_badan=0,
-        berat_badan=0,
+        kewarganegaraan=NULL,
+        tinggi_badan=NULL,
+        berat_badan=NULL,
         deskripsi=NULL,
         prestasi=NULL
 ");
