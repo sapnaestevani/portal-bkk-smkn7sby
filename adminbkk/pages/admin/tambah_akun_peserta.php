@@ -42,8 +42,10 @@ if (isset($_POST['simpan'])) {
                 $cek_siswa = mysqli_query($con, "SELECT * FROM tb_siswa WHERE nisn='$nisn'");
 
                 if (mysqli_num_rows($cek_siswa) == 0) {
-                    // Tidak insert langsung ke tb_siswa
-// Data siswa akan dibuat saat siswa melengkapi profil
+
+                    // 🔥 INSERT KE tb_siswa (WAJIB)
+                    mysqli_query($con, "INSERT INTO tb_siswa (id_user, nisn) 
+                    VALUES ('$id_user','$nisn')");
                 }
 
                 echo "<script>alert('✅ Akun siswa berhasil dibuat!'); window.location='?halaman=data_user';</script>";
