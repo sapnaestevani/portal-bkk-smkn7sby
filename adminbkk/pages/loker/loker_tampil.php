@@ -527,15 +527,34 @@ if ($data_status == "admin" || $data_status == "Ka. BKK") {
     margin-bottom: 5px !important;
   }
 
-  .box-tools {
-    width: 100% !important;
-    text-align: right !important;
-  }
+  .box-tools{
 
-  .box-tools .btn {
-    padding: 8px 16px !important;
-    font-size: 13px !important;
-  }
+    width:100% !important;
+
+    display:flex !important;
+    justify-content:center !important;
+    align-items:center !important;
+
+    margin:0 auto !important;
+
+    float:none !important;
+}
+
+  .box-tools .btn{
+
+    width:100% !important;
+    max-width:250px !important;
+
+    height:48px !important;
+
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+
+    margin:0 auto !important;
+
+    border-radius:14px !important;
+}
 
   /* Main Container */
   .job-container {
@@ -1314,6 +1333,79 @@ if ($data_status == "admin" || $data_status == "Ka. BKK") {
     }
   }
 }
+
+/* =========================================
+   RESPONSIVE MODAL TAMBAH LOWONGAN
+========================================= */
+
+/* MOBILE */
+@media(max-width:991px){
+
+    #myModal .modal-dialog{
+
+        width:95% !important;
+        max-width:95% !important;
+
+        margin-top:115px !important;
+        margin-left:auto !important;
+        margin-right:auto !important;
+    }
+
+    #myModal .modal-content{
+        border-radius:18px !important;
+        overflow:hidden !important;
+    }
+
+    #myModal .modal-header{
+        padding:18px !important;
+    }
+
+    #myModal .modal-title{
+        font-size:18px !important;
+        line-height:1.5 !important;
+    }
+
+    #myModal .modal-body{
+        padding:18px !important;
+        max-height:75vh !important;
+        overflow-y:auto !important;
+    }
+
+    #myModal .form-group{
+        margin-bottom:15px !important;
+    }
+
+    #myModal .form-control{
+        min-height:46px !important;
+        font-size:14px !important;
+        border-radius:12px !important;
+    }
+
+    #myModal textarea.form-control{
+        min-height:90px !important;
+    }
+
+    #myModal .modal-footer{
+        display:flex !important;
+        flex-direction:column !important;
+        gap:10px !important;
+
+        padding:18px !important;
+    }
+
+    #myModal .modal-footer .btn{
+        width:100% !important;
+        height:46px !important;
+
+        display:flex !important;
+        align-items:center !important;
+        justify-content:center !important;
+
+        border-radius:12px !important;
+    }
+
+}
+
     </style>
     <br><br>
     <div class="box box-primary">
