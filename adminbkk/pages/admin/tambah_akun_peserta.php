@@ -45,34 +45,22 @@ if (isset($_POST['simpan'])) {
 
                     // 🔥 INSERT KE tb_siswa 
                     $insert_siswa = mysqli_query($con, "
-    INSERT INTO tb_siswa (
-        id_user,
-        nisn,
-        nama,
-        jekel,
-        status_perkawinan,
-        kewarganegaraan,
-        tinggi_badan,
-        berat_badan,
-        deskripsi,
-        prestasi
-    ) VALUES (
-        '$id_user',
-        '$nisn',
-        '',
-        NULL,
-        NULL,
-        '',
-        0,
-        0,
-        NULL,
-        NULL
-    )
+    INSERT INTO tb_siswa SET
+        id_user='$id_user',
+        nisn='$nisn',
+        nama='',
+        jekel=NULL,
+        status_perkawinan=NULL,
+        kewarganegaraan='',
+        tinggi_badan=0,
+        berat_badan=0,
+        deskripsi=NULL,
+        prestasi=NULL
 ");
 
-                    if (!$insert_siswa) {
-                        die(mysqli_error($con));
-                    }
+if(!$insert_siswa){
+    die('TB SISWA ERROR : '.mysqli_error($con));
+}
                 }
 
                 echo "<script>alert('✅ Akun siswa berhasil dibuat!'); window.location='?halaman=data_user';</script>";
@@ -120,7 +108,14 @@ if (isset($_POST['simpan_perusahaan'])) {
                 $id_user = mysqli_insert_id($con);
 
                 // 🔥 INSERT KE tb_perusahaan (WAJIB)
-                mysqli_query($con, "INSERT INTO tb_perusahaan (id_user) VALUES ('$id_user')");
+                $insert_perusahaan = mysqli_query($con, "
+    INSERT INTO tb_perusahaan SET
+        id_user='$id_user'
+");
+
+if(!$insert_perusahaan){
+    die('TB PERUSAHAAN ERROR : '.mysqli_error($con));
+}
 
                 echo "<script>alert('✅ Akun perusahaan berhasil dibuat!'); window.location='?halaman=data_user';</script>";
             } else {
