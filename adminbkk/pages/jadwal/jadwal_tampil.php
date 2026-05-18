@@ -490,7 +490,7 @@ $id_perusahaan = isset($_SESSION['ses_id_perusahaan']) ? intval($_SESSION['ses_i
   /* MODAL */
   .modal-dialog {
     width: 95% !important;
-    margin: 15px auto !important;
+    margin: 110px auto !important;
   }
 
   .modal-modern .modal-content {
@@ -606,6 +606,25 @@ $id_perusahaan = isset($_SESSION['ses_id_perusahaan']) ? intval($_SESSION['ses_i
   .modal-modern .modal-footer {
     padding: 15px !important;
   }
+}
+
+.modal-header{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    padding:20px 25px !important;
+}
+
+.modal-header .close{
+    margin:0 !important;
+    padding:0 !important;
+    font-size:30px !important;
+    color:#fff !important;
+    opacity:1 !important;
+    line-height:1 !important;
+    position:relative;
+    top:-24px;
+    right:-82px;
 }
 
 </style>
@@ -779,7 +798,7 @@ $id_perusahaan = isset($_SESSION['ses_id_perusahaan']) ? intval($_SESSION['ses_i
                 <div class="modal-header">
                     <h4 class="modal-title"><i class="fa fa-calendar-plus"></i> Input Jadwal Tes</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                        <spaInn aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">

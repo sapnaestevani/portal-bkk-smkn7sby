@@ -385,6 +385,202 @@ if ($data_status == "siswa") {
             width: 100%;
         }
     }
+
+    /* =========================================
+   MODAL TAMBAH PENGUMUMAN RESPONSIVE
+========================================= */
+
+#modalTambah .modal-dialog{
+    width:92% !important;
+    max-width:650px !important;
+
+    margin:85px auto 30px auto !important;
+
+    animation:modalFade .3s ease;
+}
+
+/* MODAL CONTENT */
+#modalTambah .modal-content{
+    border:none !important;
+    border-radius:22px !important;
+    overflow:hidden !important;
+
+    box-shadow:0 10px 35px rgba(0,0,0,0.25) !important;
+}
+
+/* HEADER */
+#modalTambah .modal-header{
+    position:relative !important;
+
+    background:linear-gradient(135deg,#667eea 0%,#764ba2 100%) !important;
+
+    padding:24px 28px !important;
+
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+
+    border:none !important;
+}
+
+/* TITLE */
+#modalTambah .modal-header h4{
+    width:100% !important;
+
+    margin:0 !important;
+
+    text-align:center !important;
+
+    color:#fff !important;
+
+    font-size:28px !important;
+    font-weight:700 !important;
+
+    line-height:1.3 !important;
+}
+
+/* CLOSE BUTTON */
+#modalTambah .modal-header .close{
+    position:absolute !important;
+
+    right:22px !important;
+    top:12% !important;
+
+    transform:translateY(-50%) !important;
+
+    margin:0 !important;
+
+    color:#fff !important;
+
+    opacity:1 !important;
+
+    font-size:34px !important;
+
+    text-shadow:none !important;
+}
+
+/* BODY */
+#modalTambah .modal-body{
+    padding:28px !important;
+    background:#fff !important;
+}
+
+/* FORM */
+#modalTambah .form-group{
+    margin-bottom:22px !important;
+}
+
+#modalTambah label{
+    font-size:16px !important;
+    font-weight:700 !important;
+    color:#333 !important;
+    margin-bottom:10px !important;
+}
+
+/* INPUT */
+#modalTambah .form-control{
+    height:52px !important;
+
+    border-radius:14px !important;
+
+    border:1px solid #dcdfe6 !important;
+
+    font-size:16px !important;
+
+    box-shadow:none !important;
+}
+
+/* TEXTAREA */
+#modalTambah textarea.form-control{
+    height:110px !important;
+    resize:none !important;
+    padding-top:14px !important;
+}
+
+/* FOCUS */
+#modalTambah .form-control:focus{
+    border-color:#667eea !important;
+
+    box-shadow:0 0 0 4px rgba(102,126,234,0.12) !important;
+}
+
+/* FOOTER */
+#modalTambah .modal-footer{
+    border:none !important;
+
+    padding:20px 28px 28px !important;
+
+    display:flex !important;
+    justify-content:flex-end !important;
+    gap:12px !important;
+
+    flex-wrap:wrap !important;
+}
+
+/* BUTTON */
+#modalTambah .btn{
+    min-width:120px !important;
+
+    height:48px !important;
+
+    border-radius:12px !important;
+
+    font-size:15px !important;
+    font-weight:600 !important;
+}
+
+/* MOBILE */
+@media (max-width:768px){
+
+    #modalTambah .modal-dialog{
+        width:94% !important;
+
+        margin:120px auto 20px auto !important;
+    }
+
+    #modalTambah .modal-header{
+        padding:22px 18px !important;
+    }
+
+    #modalTambah .modal-header h4{
+        font-size:22px !important;
+    }
+
+    #modalTambah .modal-header .close{
+        right:4px !important;
+        top:-24px;
+        font-size:30px !important;
+    }
+
+    #modalTambah .modal-body{
+        padding:22px 18px !important;
+    }
+
+    #modalTambah .form-control{
+        font-size:15px !important;
+    }
+
+    #modalTambah .modal-footer{
+        justify-content:center !important;
+    }
+
+    #modalTambah .btn{
+        width:100% !important;
+    }
+
+}
+
+/* ANIMATION */
+@keyframes modalFade{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
 </style>
 
 <div class="results-container">

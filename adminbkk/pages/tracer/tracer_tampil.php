@@ -148,15 +148,24 @@ body{
     border-radius:18px !important;
   }
 
-  .box-header{
-    padding:15px !important;
-    text-align:center !important;
-  }
+  /* HEADER BOX */
+.box-header{
+  padding:20px 24px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  flex-wrap:wrap !important;
+  border-bottom:1px solid #f1f1f1 !important;
+  background:#fff !important;
+}
 
-  .box-title{
-    font-size:18px !important;
-    line-height:1.4 !important;
-  }
+.box-title{
+  font-weight:700 !important;
+  font-size:22px !important;
+  color:#2c3e50 !important;
+  margin:0 !important;
+  line-height:1.4 !important;
+}
 
   /* TABLE RESPONSIVE */
   .box-body{
@@ -190,7 +199,7 @@ body{
   /* MODAL */
   .modal-dialog{
     width:95% !important;
-    margin:20px auto !important;
+    margin:120px auto !important;
   }
 
   .modal-body{
@@ -229,6 +238,35 @@ body{
   .form-group .btn{
     font-size:13px !important;
     padding:10px !important;
+  }
+
+}
+
+.tahun-label{
+  font-size:13px !important;
+  padding:8px 14px !important;
+  border-radius:30px !important;
+  background:#667eea !important;
+  display:inline-block !important;
+  margin-top:5px !important;
+}
+
+@media (max-width:768px){
+
+  .box-header{
+    padding:16px !important;
+    text-align:center !important;
+    justify-content:center !important;
+  }
+
+  .box-title{
+    width:100% !important;
+    font-size:18px !important;
+    margin-bottom:10px !important;
+  }
+
+  .tahun-label{
+    margin:auto !important;
   }
 
 }
@@ -338,16 +376,8 @@ body{
         <div class="box-header with-border">
             <h3 class="box-title">Data Alumni Bekerja</h3>
             <?php if (isset($_POST['txttahun']) && !empty($_POST['txttahun'])): ?>
-                <span class="label label-info pull-right">Tahun Lulus: <?php echo htmlspecialchars($_POST['txttahun']); ?></span>
+                <span class="label label-info tahun-label">Tahun Lulus: <?php echo htmlspecialchars($_POST['txttahun']); ?></span>
             <?php endif; ?>
-            <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                    <i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove">
-                    <i class="fa fa-times"></i>
-                </button>
-            </div>
         </div>
 
         <div class="box-body">

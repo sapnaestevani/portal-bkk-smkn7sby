@@ -201,7 +201,7 @@ body{
   /* MODAL */
   .modal-dialog{
     width:95% !important;
-    margin:20px auto !important;
+    margin:120px auto !important;
   }
 
   .modal-body{
@@ -356,14 +356,6 @@ body{
             <?php if (!empty($tahun_filter)): ?>
                 <span class="label label-info pull-right">Tahun Lulus: <?php echo htmlspecialchars($tahun_filter); ?></span>
             <?php endif; ?>
-            <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                    <i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove">
-                    <i class="fa fa-times"></i>
-                </button>
-            </div>
         </div>
 
         <div class="box-body">
