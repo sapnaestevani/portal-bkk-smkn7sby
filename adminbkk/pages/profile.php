@@ -674,7 +674,7 @@ border-color:#ef4444;
 
 <tr>
 <td><b>Deskripsi</b></td>
-<td>: <?php echo nl2br($tampil['deskripsi']); ?></td>
+<td>: <?php echo ($tampil['deskripsi']); ?></td>
 </tr>
 
 <tr>
