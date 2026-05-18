@@ -426,7 +426,7 @@ $dokumen = mysqli_fetch_assoc(mysqli_query($con, "
     <div class="company-header-detail">
         <div class="company-logo-detail">
 
-<?php if (!empty($data['logo']) && file_exists("dist/img/foto_perusahaan/" . $data['logo'])): ?>
+<?php if (!empty($data['logo'])): ?>
 
     <img src="dist/img/foto_perusahaan/<?= htmlspecialchars($data['logo'] ?? '') ?>" 
          alt="Logo Perusahaan"
