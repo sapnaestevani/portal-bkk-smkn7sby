@@ -430,16 +430,19 @@
     SELECT 
     u.id_user,
     u.username,
-    u.nama,
-    u.email,
     u.role,
     u.status,
+
     p.id_perusahaan,
+    p.nama_perusahaan,
+    p.email,
     p.alamat,
     p.bidang_usaha
+
     FROM tb_user u
     JOIN tb_perusahaan p 
     ON u.id_user = p.id_user
+
     WHERE u.role='perusahaan'
 ");
         $no = 1;
@@ -473,7 +476,7 @@
                         </div>
                         <div class="info-content">
                             <div class="info-label">Nama Perusahaan</div>
-                            <div class="info-value"><?= htmlspecialchars($data['nama'] ?? '-') ?></div>
+                            <div class="info-value"><?= htmlspecialchars($data['nama_perusahaan'] ?? '-') ?></div>
                         </div>
                     </div>
 
