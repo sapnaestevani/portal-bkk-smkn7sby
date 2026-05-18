@@ -399,6 +399,13 @@ $dokumen = mysqli_fetch_assoc(mysqli_query($con, "
     .main-card-detail {
         animation: fadeInDetail 0.6s ease-out;
     }
+
+    .logo-perusahaan-img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
+}
 </style>
 
 <div class="page-header-detail">
@@ -418,8 +425,20 @@ $dokumen = mysqli_fetch_assoc(mysqli_query($con, "
     <!-- Company Header -->
     <div class="company-header-detail">
         <div class="company-logo-detail">
-            <i class="fa fa-building"></i>
-        </div>
+
+<?php if (!empty($data['logo']) && file_exists("dist/img/foto_perusahaan/" . $data['logo'])): ?>
+
+    <img src="dist/img/foto_perusahaan/<?= htmlspecialchars($data['logo'] ?? '') ?>" 
+         alt="Logo Perusahaan"
+         class="logo-perusahaan-img">
+
+<?php else: ?>
+
+    <i class="fa fa-building"></i>
+
+<?php endif; ?>
+
+</div>
         <h2 class="company-name-detail"><?= htmlspecialchars($data['nama_perusahaan']); ?></h2>
         <span class="company-status-detail <?= $data['status'] == 'aktif' ? 'status-active-detail' : 'status-inactive-detail'; ?>">
             <i class="fa fa-<?= $data['status'] == 'aktif' ? 'check-circle' : 'times-circle'; ?>"></i>
