@@ -450,7 +450,7 @@
         while ($data = mysqli_fetch_array($query_tampil, MYSQLI_BOTH)) {
             ?>
             <div class="modern-card perusahaan-card"
-     data-perusahaan="<?= strtolower(htmlspecialchars($data['nama'])); ?>">
+     data-perusahaan="<?= strtolower(htmlspecialchars($data['nama_perusahaan'])); ?>">
                 <div class="card-header-modern">
                     <div class="card-number"><?= $no++; ?></div>
                     <span
