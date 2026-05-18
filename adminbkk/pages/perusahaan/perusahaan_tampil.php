@@ -496,7 +496,7 @@
                         </div>
                         <div class="info-content">
                             <div class="info-label">Alamat</div>
-                            <div class="info-value"><?= htmlspecialchars($data['alamat']); ?></div>
+                            <div class="info-value"><?= htmlspecialchars($data['alamat'] ?? '-'); ?></div>
                         </div>
                     </div>
 
