@@ -463,7 +463,7 @@
                         </div>
                         <div class="info-content">
                             <div class="info-label">Nama Perusahaan</div>
-                            <div class="info-value"><?= htmlspecialchars($data['nama']); ?></div>
+                            <div class="info-value"><?= htmlspecialchars($data['nama_perusahaan'] ?? '-') ?></div>
                         </div>
                     </div>
 
@@ -473,7 +473,7 @@
                         </div>
                         <div class="info-content">
                             <div class="info-label">Email</div>
-                            <div class="info-value"><?= htmlspecialchars($data['email']); ?></div>
+                            <div class="info-value"><?= htmlspecialchars($data['email'] ?? '-') ?></div>
                         </div>
                     </div>
 
