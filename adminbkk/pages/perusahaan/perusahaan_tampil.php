@@ -427,11 +427,21 @@
     <div class="modern-grid-container">
         <?php
         $query_tampil = mysqli_query($con, "
-            SELECT u.*, p.id_perusahaan, p.alamat, p.bidang_usaha
-            FROM tb_user u
-            JOIN tb_perusahaan p ON u.id_user = p.id_user
-            WHERE u.role='perusahaan'
-        ");
+    SELECT 
+    u.id_user,
+    u.username,
+    u.nama,
+    u.email,
+    u.role,
+    u.status,
+    p.id_perusahaan,
+    p.alamat,
+    p.bidang_usaha
+    FROM tb_user u
+    JOIN tb_perusahaan p 
+    ON u.id_user = p.id_user
+    WHERE u.role='perusahaan'
+");
         $no = 1;
 
         while ($data = mysqli_fetch_array($query_tampil, MYSQLI_BOTH)) {
