@@ -110,7 +110,7 @@ if (isset($_POST['simpan_perusahaan'])) {
     /* Modern Form Styling */
     .modern-forms-container {
         max-width: 1200px;
-        margin: -20px auto;
+        margin: -1px auto;
         padding: 0 20px;
         animation: fadeIn 0.6s ease;
     }
@@ -294,6 +294,18 @@ if (isset($_POST['simpan_perusahaan'])) {
     }
     
     @media (max-width: 768px) {
+
+    .modern-forms-container {
+        padding: 0 2px;
+    }
+
+    .modern-card {
+        width: 100%;
+    }
+
+    .card-body-modern {
+        padding: 20px 15px;
+    }
         .forms-grid {
             grid-template-columns: 1fr;
         }

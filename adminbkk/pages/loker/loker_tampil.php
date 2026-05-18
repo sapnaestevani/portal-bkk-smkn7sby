@@ -1493,10 +1493,10 @@ if ($data_status == "admin" || $data_status == "Ka. BKK") {
                         </p>
 
                         <h4 style="color:#2d3748; font-weight:700; margin:25px 0 15px 0;">
-                            <b>🎯 Kualifikasi</b>
+                            <b>✅ Kualifikasi</b>
                         </h4>
                         <p style="color:#555; line-height:1.8;">
-                            <?php echo nl2br($data_detail['kualifikasi']); ?>
+                            <?php echo nl2br($data_detail['jenis_pekerjaan']); ?>
                         </p>
 
                         <h4 style="color:#2d3748; font-weight:700; margin:25px 0 15px 0;">
@@ -1504,6 +1504,13 @@ if ($data_status == "admin" || $data_status == "Ka. BKK") {
                         </h4>
                         <p style="color:#555; line-height:1.8;">
                             <?php echo nl2br($data_detail['lokasi']); ?>
+                        </p>
+
+                        <h4 style="color:#2d3748; font-weight:700; margin:25px 0 15px 0;">
+                            <b>🎯 Jenis Pekerjaan</b>
+                        </h4>
+                        <p style="color:#555; line-height:1.8;">
+                            <?php echo nl2br($data_detail['kualifikasi']); ?>
                         </p>
 
                         <h4 style="color:#2d3748; font-weight:700; margin:25px 0 15px 0;">
@@ -1653,36 +1660,40 @@ if ($data_status == "admin" || $data_status == "Ka. BKK") {
                                 <option>Wanita</option>
                                 <option>Pria / Wanita</option>
                             </select>
-                        </div>
+                        </div>  
 
                         <div class="form-group">
                             <label>Tentang Posisi</label>
-                            <textarea class="form-control" name="txtposisi" rows="4" required></textarea>
+                            <textarea class="form-control" name="txtposisi" rows="4"  placeholder="Deskripsi singkat tentang posisi ini..." required></textarea>
                         </div>
 
                         <div class="form-group">
                             <label>Deskripsi Pekerjaan</label>
-                            <textarea class="form-control" name="txtdeskripsi" rows="5" required></textarea>
+                            <textarea class="form-control" name="txtdeskripsi" rows="5" placeholder="• Tugas dan tanggung jawab&#10;• Target pekerjaan&#10;• Lingkungan kerja"
+                                                required></textarea>
                         </div>
 
                         <div class="form-group">
                             <label>Kualifikasi</label>
-                            <textarea class="form-control" name="txtkualifikasi" rows="5" required></textarea>
+                            <textarea class="form-control" name="txtkualifikasi" rows="5" placeholder="• Pendidikan minimal&#10;• Pengalaman kerja&#10;• Skill yang diperlukan&#10;• Sertifikasi (jika ada)"
+                                                required></textarea>
                         </div>
 
                         <div class="form-group">
                             <label>Lokasi</label>
-                            <textarea class="form-control" name="txtlokasi" rows="5" required></textarea>
+                            <textarea class="form-control" name="txtlokasi" rows="5" placeholder="Alamat Perusahaan"
+                                                required></textarea>
                         </div>
 
                         <div class="form-group">
                             <label>Jenis Pekerjaan</label>
-                            <textarea class="form-control" name="txtjenis_pekerjaan" rows="5" required></textarea>
+                            <textarea class="form-control" name="txtjenis_pekerjaan" rows="5" placeholder="Full-time, Part-time, Contract, Freelance"
+                                                required></textarea>
                         </div>
 
                         <div class="form-group">
                             <label>Gaji</label>
-                            <textarea class="form-control" name="txtgaji" rows="5" required></textarea>
+                            <textarea class="form-control" name="txtgaji" rows="5" placeholder="Contoh: Rp 3.000.000 - Rp 5.000.000" required></textarea>
                         </div>
 
                         <div class="form-group">
@@ -1695,10 +1706,10 @@ if ($data_status == "admin" || $data_status == "Ka. BKK") {
                             <input type="date" class="form-control" name="txtbatas_lamaran" required />
                         </div>
 
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label>Sumber</label>
                             <?php echo $data_nama; ?>
-                        </div>
+                        </div> -->
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>

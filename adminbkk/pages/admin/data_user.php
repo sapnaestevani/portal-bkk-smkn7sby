@@ -256,7 +256,7 @@ $total_perusahaan = mysqli_num_rows(mysqli_query($con, "SELECT * FROM tb_user WH
 
 <div class="account-data-container">
     <div class="page-header-modern">
-        <h1>📊 Data Akun Pengguna</h1>
+        <h1>🔐 Data Akun Pengguna</h1>
         <p>Kelola akun peserta dan perusahaan</p>
     </div>
     

@@ -231,7 +231,8 @@ if (!$data_cek) {
     
     @media (max-width: 768px) {
         .modern-form-container {
-            padding: 20px 10px;
+            padding: 20px 1px;
+            margin-top: -1px;
         }
         
         .modern-body {
